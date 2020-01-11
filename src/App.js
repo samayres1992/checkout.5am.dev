@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Container } from 'react-bulma-components';
+import HeaderTemplate from './templates/HeaderTemplate';
+import FooterTemplate from './templates/FooterTemplate';
+import Shop from './components/Shop';
+import Cart from './components/Cart';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <HeaderTemplate />
+      <Container className="content-container">
+        <Switch>   
+          <Route exact path="/" component={ Shop } />
+          <Route exact path="/cart" component={ Cart } />
+        </Switch>
+      </Container>
+      <FooterTemplate />
+    </BrowserRouter>
   );
 }
 

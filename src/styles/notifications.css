@@ -1,0 +1,12 @@
+.notification-success {
+  background: green!important;
+}
+
+.notification-error {
+  background: red!important;
+}
+
+.message {
+  background: transparent!important;
+  padding-left: 30px;
+}
